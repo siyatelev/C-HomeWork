@@ -8,13 +8,13 @@ Console.WriteLine("Введите число: ");
 int Number = int.Parse(Console.ReadLine());
 Sum(Number);
 
-void Sum(int num)
+void Sum(int number)
 {
-    int Sum = 0;
-    while (num > 0)
+    int sumnum = 0;
+    while (number > 0)
     {
-        Sum = Sum + num % 10;
-        num = num / 10;
+        sumnum = sumnum + number % 10;
+        number = number / 10;
     }
-Console.WriteLine($"Сумма цифр в числе = {Sum}");
+Console.WriteLine($"Сумма цифр в числе = {sumnum}");
 }
