@@ -24,7 +24,7 @@ int[] GetArray(int size, int min, int max)
 
 int SumOddPositions(int[] arr)
 {
-    int SumOdd = 0;
-    for (int i = 1; i < arr.Length; i=i+2) SumOdd=SumOdd+arr[i];
-    return SumOdd;
+    int sumOdd = 0;
+    for (int i = 1; i < arr.Length; i = i + 2) sumOdd = sumOdd + arr[i];
+    return sumOdd;
 }
