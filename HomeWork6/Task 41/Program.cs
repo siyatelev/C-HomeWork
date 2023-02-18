@@ -5,29 +5,46 @@
 
 // 1, -7, 567, 89, 223-> 3
 
-Console.WriteLine("Введите длину массива");
-int size = int.Parse(Console.ReadLine());
-int[] array = Input(size);
-Console.WriteLine($"[{String.Join(", ", array)}]");
-Console.WriteLine($"Количество положительных чисел: {PositiveNum(array)}");
+// Console.WriteLine("Введите длину массива");
+// int size = int.Parse(Console.ReadLine());
+// int[] array = Input(size);
+// Console.WriteLine($"[{String.Join(", ", array)}]");
+// Console.WriteLine($"Количество положительных чисел: {PositiveNum(array)}");
 
-int[] Input(int length)
-{
-    Console.WriteLine("Заполните массив");
-    int[] arr = new int[length];
-    for (int i = 0; i < length; i++)
-    {
-        arr[i] = int.Parse(Console.ReadLine());
-    }
-    return arr;
-}
+// int[] Input(int length)
+// {
+//     Console.WriteLine("Заполните массив");
+//     int[] arr = new int[length];
+//     for (int i = 0; i < length; i++)
+//     {
+//         arr[i] = int.Parse(Console.ReadLine());
+//     }
+//     return arr;
+// }
 
-int PositiveNum(int[] arr)
-{
-    int count = 0;
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if (arr[i] > 0) count++;
-    }
-    return count;
-}
+// int PositiveNum(int[] arr)
+// {
+//     int count = 0;
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         if (arr[i] > 0) count++;
+//     }
+//     return count;
+// }
+
+
+// 
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//  Вариант ввода массива в строку!!!!!!!!!!!!!!!!!!!!
+// Console.Write("Введите элементы(через пробел): ");
+// int[] arr = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
+// int count = 0;
+
+// for (int i = 0; i < arr.Length; i++)
+// {
+// if (arr[i] > 0)
+// {
+// count++;
+// }
+// }
+
