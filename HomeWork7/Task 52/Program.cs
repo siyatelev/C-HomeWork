@@ -14,11 +14,8 @@ int collumns = int.Parse(Console.ReadLine());
 
 int[,] array = InputArray(rows, collumns);
 PrintArray(array);
-// int[] averageArray = AverageValueCollumn(array);
-// Console.WriteLine($"[{String.Join(", ", averageArray)}]");
-
-
-
+double[] averageArray = AverageValueCollumn(array);
+Console.WriteLine($"[{String.Join("; ", averageArray)}]");
 
 
 
@@ -29,7 +26,7 @@ int[,] InputArray(int m, int n)
     {
         for (int j = 0; j < n; j++)
         {
-            arr[i, j] = new Random().Next(-10, 10);
+            arr[i, j] = new Random().Next(0, 10);
         }
     }
     return arr;
@@ -38,26 +35,26 @@ int[,] InputArray(int m, int n)
 void PrintArray(int[,] someArray)
 {
     for (int i = 0; i < someArray.GetLength(0); i++)
+    {
+        for (int j = 0; j < someArray.GetLength(1); j++)
         {
-            for (int j = 0; j < someArray.GetLength(1); j++)
-            {
-                Console.Write($" {someArray[i,j]}");
-            }
-            Console.WriteLine();
+            Console.Write($" {someArray[i, j]}");
         }
+        Console.WriteLine();
+    }
 }
 
-// int AverageValueCollumn(int[,] arr)
-// {
-//     int [] averageArray = new int[arr.GetLength(0)];
-//     int averageCollumn = 0;
-//     for (int j = 0; j < arr.GetLength(1); i++)
-//     {
-//         for (int i = 0; i < arr.GetLength(0); j++)
-//         {
-//             averageCollumn+=arr[i,j];
-//         }
-//         averageArray[j]=averageCollumn/arr.GetLength(1);
-//     }
-// return averageArray;
-// }
+double[] AverageValueCollumn(int[,] someArray)
+{
+    double[] arr = new double[someArray.GetLength(1)];
+    for (int j = 0; j < someArray.GetLength(1); j++)
+    {
+        double averageCollumn = 0;
+        for (int i = 0; i < someArray.GetLength(0); i++)
+        {
+            averageCollumn += someArray[i, j];
+        }
+        arr[j] = Math.Round(averageCollumn / someArray.GetLength(0), 1);
+    }
+    return arr;
+}
