@@ -34,6 +34,26 @@ int[,] FillArray(int m, int n, int minValue, int maxValue)
     return arr;
 }
 
+// void ElementNumber(int[,] newArray, int a, int b)
+// {
+//     if (a > 0 &&
+//         b > 0 &&
+//         a <= newArray.GetLength(0) &&
+//         b <= newArray.GetLength(1))
+//     {
+//         for (int i = 0; i < newArray.GetLength(0); i++)
+//         {
+//             for (int j = 0; j < newArray.GetLength(1); j++)
+//             {
+//                 if (i == a - 1 && j == b - 1) Console.WriteLine($"Значение элемента [{m},{n}]={newArray[i, j]}");
+//             }
+//         }
+//     }
+//     else Console.WriteLine($"[{m},{n}] - Такого элемента нет в массиве");
+// }
+
+////////// Правильный вариант без циклов от Эльвиры
+
 void ElementNumber(int[,] newArray, int a, int b)
 {
     if (a > 0 &&
@@ -41,17 +61,10 @@ void ElementNumber(int[,] newArray, int a, int b)
         a <= newArray.GetLength(0) &&
         b <= newArray.GetLength(1))
     {
-        for (int i = 0; i < newArray.GetLength(0); i++)
-        {
-            for (int j = 0; j < newArray.GetLength(1); j++)
-            {
-                if (i == a - 1 && j == b - 1) Console.WriteLine($"Значение элемента [{m},{n}]={newArray[i, j]}");
-            }
-        }
+        Console.WriteLine($"Значение элемента [{a},{b}]={newArray[a - 1, b - 1]}");
     }
-    else Console.WriteLine($"[{m},{n}] - Такого элемента нет в массиве");
+    else Console.WriteLine($"[{a},{b}] - Такого элемента нет в массиве");
 }
-
 void PrintArray(int[,] someArray)
 {
     for (int i = 0; i < someArray.GetLength(0); i++)
